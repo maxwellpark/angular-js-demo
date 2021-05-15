@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.2/angular-material.min.css"
+            integrity="sha512-dMahqxu9L2XnPgHEO4mWksNGfyvOsV2rtMt5TX7OJdWbky+sw9dyMPw8gwhohmwVXAJW5zVCfdyvhutemjYuzg=="
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"
+        />
+        <title>Angular Demo</title>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="MainController">
+                <h1>{{welcome}} Angular Demo</h1>
+                <div id="custom-component-container">
+                    <my-component></my-component>
+                </div>
+                <div id="dynamic-data-container">
+                    <dynamic-data
+                        ng-click="modifyData()"
+                        data="data"
+                        response="apiResponse"
+                    ></dynamic-data>
+                </div>
+                <div id="collapsible-content">
+                    <a href="#" ng-model="collapsed" ng-click="collapsed=!collapsed">Guitarists</a>
+                    <div ng-show="collapsed"><guitarist-list></guitarist-list></div>
+                </div>
+                <div id="material-container">
+                    <md-toolbar class="md-theme-light">
+                        <h2 class="md-toolbar-tools">Header</h2>
+                    </md-toolbar>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"
+            integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA=="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.2/angular-animate.min.js"
+            integrity="sha512-jZoujmRqSbKvkVDG+hf84/X11/j5TVxwBrcQSKp1W+A/fMxmYzOAVw+YaOf3tWzG/SjEAbam7KqHMORlsdF/eA=="
+            crossorigin="anonymous"
+        ></script>
+        <script src="./guitarist-list/guitarist-list.module.js"></script>
+        <script src="./guitarist-list/guitarist-list.component.js"></script>
+        <script src="./dynamic-data/dynamic-data.module.js"></script>
+        <script src="./dynamic-data/dynamic-data.component.js"></script>
+        <script src="./dynamic-data/dynamic-data.service.js"></script>
+
+        <!-- Load main module last as it is dependent on the others -->
+        <script src="./app.module.js"></script>
+    </body>
+</html>
