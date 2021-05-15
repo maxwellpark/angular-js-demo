@@ -4,8 +4,13 @@
         Data:
         <span>{{$ctrl.data}}</span>
     </div>
-    <div>
+    <!-- Click event updates the component's state -->
+    <div ng-click="$ctrl.updateDynamicData()">
         API response:
-        <span>{{$ctrl.response}}</span>
+        <span>{{$ctrl.dynamicData}}</span>
+    </div>
+    <div ng-click="$ctrl.updateDataMessage()">
+        Number of updates:
+        <span>{{$ctrl.dataMessage}}</span>
     </div>
 </div>
