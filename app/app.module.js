@@ -1,5 +1,11 @@
 // Inject module dependencies in the array parameter
-var myApp = angular.module("myApp", ["guitaristList", "dynamicData", "ngAnimate"]);
+var myApp = angular.module("myApp", [
+    "guitaristList",
+    "dynamicData",
+    "ngAnimate",
+    "ngMessages",
+    "ngMaterial",
+]);
 
 myApp.controller("MainController", [
     "$scope",
